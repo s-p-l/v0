@@ -1,3 +1,9 @@
+.styley{
+display: flex;
+flex-direction: column;
+height: 1500px;
+justify-content: space-between}
+
 body, html {
 	font-family: 'Open Sans', sans-serif;
 	text-rendering: optimizeLegibility !important;
