@@ -26,7 +26,151 @@
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700,800,900" rel="stylesheet">
-
+	
+<!-- Fonctions graphiques -->
+<script>
+			window.onload = function () {
+var chart = new CanvasJS.Chart("chart_gender", {
+	animationEnabled: true,
+	theme: "light2", //"light1", "dark1", "dark2"
+	title:{
+		text: "Churn by gender"             
+	},
+	axisY:{
+		interval: 10,
+		suffix: "%"
+	},
+	toolTip:{
+		shared: true
+	},
+	data:[{
+			type: "stackedBar100",
+			toolTipContent: "<b>{name}:</b> {y} (#percent%)",
+			showInLegend: true, 
+			name: "Male",
+			dataPoints: [
+				{ y: 220, label: "Churn" },
+				{ y: 1650, label: "No churn" }
+			]
+		}, 
+		{
+			type: "stackedBar100",
+			toolTipContent: "<b>{name}:</b> {y} (#percent%)",
+			showInLegend: true, 
+			name: "Female",
+			dataPoints: [
+				{ y: 260, label: "Churn" },
+				{ y: 1700, label: "No churn" }
+			]
+	}]
+});
+chart.render();
+var chart = new CanvasJS.Chart("chart_senior", {
+	animationEnabled: true,
+	theme: "light2", //"light1", "dark1", "dark2"
+	title:{
+		text: "Churn by age category"             
+	},
+	axisY:{
+		interval: 10,
+		suffix: "%"
+	},
+	toolTip:{
+		shared: true
+	},
+	data:[{
+			type: "stackedBar100",
+			toolTipContent: "<b>{name}:</b> {y} (#percent%)",
+			showInLegend: true, 
+			name: "Senior",
+			dataPoints: [
+				{ y: 440, label: "Churn" },
+				{ y: 1650, label: "No churn" }
+			]
+		}, 
+		{
+			type: "stackedBar100",
+			toolTipContent: "<b>{name}:</b> {y} (#percent%)",
+			showInLegend: true, 
+			name: "Not senior",
+			dataPoints: [
+				{ y: 589, label: "Churn" },
+				{ y: 1700, label: "No churn" }
+			]
+	}]
+});
+chart.render();
+var chart = new CanvasJS.Chart("chart_Internet", {
+	animationEnabled: true,
+	theme: "light2", //"light1", "dark1", "dark2"
+	title:{
+		text: "Churn by Internet service"             
+	},
+	axisY:{
+		interval: 10,
+		suffix: "%"
+	},
+	toolTip:{
+		shared: true
+	},
+	data:[{
+			type: "stackedBar100",
+			toolTipContent: "<b>{name}:</b> {y} (#percent%)",
+			showInLegend: true, 
+			name: "DSL",
+			dataPoints: [
+				{ y: 440, label: "Churn" },
+				{ y: 1650, label: "No churn" }
+			]
+		}, 
+		{
+			type: "stackedBar100",
+			toolTipContent: "<b>{name}:</b> {y} (#percent%)",
+			showInLegend: true, 
+			name: "Optic Fiber",
+			dataPoints: [
+				{ y: 589, label: "Churn" },
+				{ y: 1700, label: "No churn" }
+			]
+		},
+		{
+			type: "stackedBar100",
+			toolTipContent: "<b>{name}:</b> {y} (#percent%)",
+			showInLegend: true, 
+			name: "No Internet service",
+			dataPoints: [
+				{ y: 5490, label: "Churn" },
+				{ y: 1710, label: "No churn" }
+			]
+			
+	}]
+});
+chart.render();
+				
+var chart = new CanvasJS.Chart("chart_tenure", {
+	animationEnabled: true,
+	title:{
+		text: "Churn and tenure"
+	},
+	axisX: {
+		valueFormatString: "DDD"
+	},
+	axisY: {
+		title: "Months"
+	},
+	data: [{
+		type: "boxAndWhisker",
+		xValueFormatString: "DDDD",
+		yValueFormatString: "#0.0 Hours",
+		dataPoints: [
+			{ x: new Date(2017, 6, 3),  y: [4, 6, 8, 9, 7] },
+			{ x: new Date(2017, 6, 4),  y: [5, 6, 7, 8, 6.5] }
+		]
+	}]
+});
+chart.render();
+}
+</script>	
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
@@ -236,7 +380,16 @@
 	<p>We can support with predictive and prescriptive models aimed at answering the most important questions regarding Working Capital, Cash optimization but also Workforce, Supply chain and  Assets &amp; Network.</p> 
 	</div>
       </div>
-      <div class="col-xs-12 col-md-6"> <img src="img/operations.jpg" class="img-responsive" alt=""> </div>
+      <div class="styley">
+								<div id="chart_gender" style="height: 300px; width: 100%;"></div>
+								<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+								<div id="chart_senior" style="height: 300px; width: 100%;"></div>
+								<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+								<div id="chart_Internet" style="height: 300px; width: 100%;"></div>
+								<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+								<div id="chart_tenure" style="height: 300px; width: 100%;"></div>
+								<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</div>
     </div>
 	<br />
 	<br />
@@ -244,9 +397,9 @@
 	<div class="col-xs-12 col-md-6"> <img src="img/oper.png" class="img-responsive" alt=""> </div>
   	<div class="col-xs-12 col-md-6">
         <div class="compet-text">
-        <h3>Use Case - Human Resources Analytics</h3>
+        <h3>Use Case - Churn prediction </h3>
           <h5>Context</h5>
-	    <p>Our client, a large software company, had come to realize that employee turnover cost about &euro;4 M per year to the firm. With nearly 70 high performing sales leaving every year, the firm was facing the cost of opportunity of lost deals along with the extra recruitment cost. The firm wanted to set up an HR Analytics capability in order to identify employee attrition factors, predict quality of potential hires and analyze payroll policy.</p>  
+	    <p>Our client, a large telco company, had come to realize that employee turnover cost about &euro;4 M per year to the firm. With nearly 70 high performing sales leaving every year, the firm was facing the cost of opportunity of lost deals along with the extra recruitment cost. The firm wanted to set up an HR Analytics capability in order to identify employee attrition factors, predict quality of potential hires and analyze payroll policy.</p>  
 	  <h5>Our Solution</h5>
 	<div class="list-style">
 		<ul>
